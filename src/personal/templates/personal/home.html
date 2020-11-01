@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+
+	.chatbot {
+    	position: sticky;
+  		top: 0;
+  		margin: auto;
+  	}
+
+</style>
+
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Welcome!</h1>
+
+  {% if request.user.is_authenticated %}
+
+  <p class="lead">We're so glad to have you! Please allow us the pleasure of helping you with our cutting edge Artifical Intelligence Chatbot. It's built with the latest software and we're constantly working to improve it!</p>
+
+  </div>
+
+<iframe class=chatbot
+    allow="microphone;"
+    width="50%"
+    height="400"
+    margin="auto"
+  	style="align-content:center;"
+    src="https://console.dialogflow.com/api-client/demo/embedded/329e64d7-6b09-44c9-84bd-4d07b22a9b6f">
+</iframe>
+
+  {% else %}
+
+  <p class="lead">We're so glad to have you! Please <a href="login">sign in</a> and allow us the pleasure of helping you with our cutting edge Artifical Intelligence Chatbot. It's built with the latest software and we're constantly working to improve it!</p>
+
+</div>
+
+{% endif %}
+
+{% endblock content %}
